@@ -6,5 +6,16 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
     internal class LichHoc
     {
+        public int ID { get; set; }
+        public int Thu { get; set; }
+        public int LopHocID { get; set; }
+        public int CaHocID { get; set; }
+        public int GiangVienID { get; set; }
+        public int PhongHocID { get; set; }
+
+        public virtual LopHoc LopHoc { get; set; } = null!;
+        public virtual CaHoc CaHoc { get; set; } = null!;
+        public virtual GiangVien GiangVien { get; set; } = null!;
+        public virtual PhongHoc PhongHoc { get; set; } = null!;
     }
 }

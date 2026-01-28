@@ -4,13 +4,13 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class TaiKhoan_Quyen
+    internal class PhienDangNhap
     {
         public int ID { get; set; }
+        public DateTime ThoiGianDangNhap {  get; set; }
+        public DateTime? ThoiGianDangXuat {  get; set; }
         public int TaiKhoanID { get; set; }
-        public int QuyenID { get; set; }
 
         public TaiKhoan TaiKhoan { get; set; } = null!;
-        public Quyen Quyen { get; set; } = null!;
     }
 }
