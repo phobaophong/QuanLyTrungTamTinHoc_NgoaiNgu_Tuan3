@@ -17,5 +17,6 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 
         public ICollection<KetQua> KetQuas { get; set; } = new List<KetQua>();
         public ICollection<HocPhi> HocPhis { get; set; } = new List<HocPhi>();
+        public ICollection<TaiKhoan> TaiKhoans { get; set; } = new List<TaiKhoan>();
     }
 }

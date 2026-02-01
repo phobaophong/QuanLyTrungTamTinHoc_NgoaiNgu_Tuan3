@@ -14,6 +14,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 
         public int? NhanVienID { get; set; }
         public int? GiangVienID { get; set; }
+        public int? HocVienID { get; set; }
 
         public virtual ICollection<TaiKhoan_Quyen> TaiKhoan_Quyens { get; set; } = new List<TaiKhoan_Quyen>();
         public virtual ICollection<PhienDangNhap> PhienDangNhaps { get; set; } = new List<PhienDangNhap>();

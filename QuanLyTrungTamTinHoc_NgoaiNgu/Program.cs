@@ -1,3 +1,5 @@
+using QuanLyTrungTamTinHoc_NgoaiNgu.Forms;
+
 namespace QuanLyTrungTamTinHoc_NgoaiNgu
 {
     internal static class Program
@@ -11,7 +13,8 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new login_Form());
+            Application.Run(new frmHocVien());
+
         }
     }
 }
