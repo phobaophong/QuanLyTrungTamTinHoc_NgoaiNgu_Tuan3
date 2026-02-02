@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class PhienDangNhap
+    public class PhienDangNhap
     {
         public int ID { get; set; }
         public DateTime ThoiGianDangNhap {  get; set; }

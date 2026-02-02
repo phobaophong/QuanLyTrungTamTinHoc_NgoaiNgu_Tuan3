@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class QLTTDbContext : DbContext
+    public class QLTTDbContext : DbContext
     {
         public DbSet<HocVien> HocVien { get; set; }
         public DbSet<GiangVien> GiangVien { get; set; }

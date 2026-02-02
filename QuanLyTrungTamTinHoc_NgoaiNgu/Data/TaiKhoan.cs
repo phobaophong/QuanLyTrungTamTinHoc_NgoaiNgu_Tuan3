@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class TaiKhoan
+    public class TaiKhoan
     {
         public int ID { get; set; }
         public string TenDN { get; set; } = null!;

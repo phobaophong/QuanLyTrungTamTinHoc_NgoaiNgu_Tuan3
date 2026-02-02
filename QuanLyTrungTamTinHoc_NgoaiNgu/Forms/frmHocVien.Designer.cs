@@ -35,18 +35,18 @@
             pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel2 = new Panel();
-            button1 = new Button();
+            btnThongTin = new Button();
             panel3 = new Panel();
-            button2 = new Button();
+            btnThoiKhoaBieu = new Button();
             panel4 = new Panel();
-            button3 = new Button();
+            btnLichThi = new Button();
             panel5 = new Panel();
-            button4 = new Button();
+            btnKetQuaHocTap = new Button();
             panel6 = new Panel();
-            button5 = new Button();
+            btnHocPhi = new Button();
             panel7 = new Panel();
-            button6 = new Button();
-            panel8 = new Panel();
+            btnDangXuat = new Button();
+            pnlContent = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -67,7 +67,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1133, 37);
+            panel1.Size = new Size(900, 37);
             panel1.TabIndex = 0;
             // 
             // nightControlBox1
@@ -84,7 +84,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(994, 0);
+            nightControlBox1.Location = new Point(761, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -126,168 +126,174 @@
             flowLayoutPanel1.ForeColor = SystemColors.ControlText;
             flowLayoutPanel1.Location = new Point(0, 37);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(250, 702);
+            flowLayoutPanel1.Size = new Size(250, 463);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnThongTin);
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(243, 69);
             panel2.TabIndex = 3;
             // 
-            // button1
+            // btnThongTin
             // 
-            button1.BackColor = Color.FromArgb(23, 24, 29);
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-21, -14);
-            button1.Name = "button1";
-            button1.Padding = new Padding(25, 0, 0, 0);
-            button1.Size = new Size(306, 94);
-            button1.TabIndex = 4;
-            button1.Text = "          Thông tin cá nhân";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            btnThongTin.BackColor = Color.FromArgb(23, 24, 29);
+            btnThongTin.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnThongTin.ForeColor = Color.White;
+            btnThongTin.Image = (Image)resources.GetObject("btnThongTin.Image");
+            btnThongTin.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThongTin.Location = new Point(-21, -14);
+            btnThongTin.Name = "btnThongTin";
+            btnThongTin.Padding = new Padding(25, 0, 0, 0);
+            btnThongTin.Size = new Size(306, 94);
+            btnThongTin.TabIndex = 4;
+            btnThongTin.Text = "          Thông tin cá nhân";
+            btnThongTin.TextAlign = ContentAlignment.MiddleLeft;
+            btnThongTin.UseVisualStyleBackColor = false;
+            btnThongTin.Click += btnThongTin_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(button2);
+            panel3.Controls.Add(btnThoiKhoaBieu);
             panel3.Location = new Point(3, 78);
             panel3.Name = "panel3";
             panel3.Size = new Size(243, 69);
             panel3.TabIndex = 4;
             // 
-            // button2
+            // btnThoiKhoaBieu
             // 
-            button2.BackColor = Color.FromArgb(23, 24, 29);
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-21, -14);
-            button2.Name = "button2";
-            button2.Padding = new Padding(25, 0, 0, 0);
-            button2.Size = new Size(306, 94);
-            button2.TabIndex = 4;
-            button2.Text = "          Thời Khóa biểu";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
+            btnThoiKhoaBieu.BackColor = Color.FromArgb(23, 24, 29);
+            btnThoiKhoaBieu.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnThoiKhoaBieu.ForeColor = Color.White;
+            btnThoiKhoaBieu.Image = (Image)resources.GetObject("btnThoiKhoaBieu.Image");
+            btnThoiKhoaBieu.ImageAlign = ContentAlignment.MiddleLeft;
+            btnThoiKhoaBieu.Location = new Point(-21, -14);
+            btnThoiKhoaBieu.Name = "btnThoiKhoaBieu";
+            btnThoiKhoaBieu.Padding = new Padding(25, 0, 0, 0);
+            btnThoiKhoaBieu.Size = new Size(306, 94);
+            btnThoiKhoaBieu.TabIndex = 4;
+            btnThoiKhoaBieu.Text = "          Thời Khóa biểu";
+            btnThoiKhoaBieu.TextAlign = ContentAlignment.MiddleLeft;
+            btnThoiKhoaBieu.UseVisualStyleBackColor = false;
+            btnThoiKhoaBieu.Click += btnThoiKhoaBieu_Click;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(btnLichThi);
             panel4.Location = new Point(3, 153);
             panel4.Name = "panel4";
             panel4.Size = new Size(243, 69);
             panel4.TabIndex = 5;
             // 
-            // button3
+            // btnLichThi
             // 
-            button3.BackColor = Color.FromArgb(23, 24, 29);
-            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-21, -14);
-            button3.Name = "button3";
-            button3.Padding = new Padding(25, 0, 0, 0);
-            button3.Size = new Size(306, 94);
-            button3.TabIndex = 4;
-            button3.Text = "          Lịch thi";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = false;
+            btnLichThi.BackColor = Color.FromArgb(23, 24, 29);
+            btnLichThi.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLichThi.ForeColor = Color.White;
+            btnLichThi.Image = (Image)resources.GetObject("btnLichThi.Image");
+            btnLichThi.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLichThi.Location = new Point(-21, -14);
+            btnLichThi.Name = "btnLichThi";
+            btnLichThi.Padding = new Padding(25, 0, 0, 0);
+            btnLichThi.Size = new Size(306, 94);
+            btnLichThi.TabIndex = 4;
+            btnLichThi.Text = "          Lịch thi";
+            btnLichThi.TextAlign = ContentAlignment.MiddleLeft;
+            btnLichThi.UseVisualStyleBackColor = false;
+            btnLichThi.Click += btnLichThi_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(button4);
+            panel5.Controls.Add(btnKetQuaHocTap);
             panel5.Location = new Point(3, 228);
             panel5.Name = "panel5";
             panel5.Size = new Size(243, 69);
             panel5.TabIndex = 6;
             // 
-            // button4
+            // btnKetQuaHocTap
             // 
-            button4.BackColor = Color.FromArgb(23, 24, 29);
-            button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-21, -14);
-            button4.Name = "button4";
-            button4.Padding = new Padding(25, 0, 0, 0);
-            button4.Size = new Size(306, 94);
-            button4.TabIndex = 4;
-            button4.Text = "          Kết quả học tập";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = false;
+            btnKetQuaHocTap.BackColor = Color.FromArgb(23, 24, 29);
+            btnKetQuaHocTap.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnKetQuaHocTap.ForeColor = Color.White;
+            btnKetQuaHocTap.Image = (Image)resources.GetObject("btnKetQuaHocTap.Image");
+            btnKetQuaHocTap.ImageAlign = ContentAlignment.MiddleLeft;
+            btnKetQuaHocTap.Location = new Point(-21, -14);
+            btnKetQuaHocTap.Name = "btnKetQuaHocTap";
+            btnKetQuaHocTap.Padding = new Padding(25, 0, 0, 0);
+            btnKetQuaHocTap.Size = new Size(306, 94);
+            btnKetQuaHocTap.TabIndex = 4;
+            btnKetQuaHocTap.Text = "          Kết quả học tập";
+            btnKetQuaHocTap.TextAlign = ContentAlignment.MiddleLeft;
+            btnKetQuaHocTap.UseVisualStyleBackColor = false;
+            btnKetQuaHocTap.Click += btnKetQuaHocTap_Click;
             // 
             // panel6
             // 
-            panel6.Controls.Add(button5);
+            panel6.Controls.Add(btnHocPhi);
             panel6.Location = new Point(3, 303);
             panel6.Name = "panel6";
             panel6.Size = new Size(243, 69);
             panel6.TabIndex = 7;
             // 
-            // button5
+            // btnHocPhi
             // 
-            button5.BackColor = Color.FromArgb(23, 24, 29);
-            button5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-21, -14);
-            button5.Name = "button5";
-            button5.Padding = new Padding(25, 0, 0, 0);
-            button5.Size = new Size(306, 94);
-            button5.TabIndex = 4;
-            button5.Text = "          Học phí";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = false;
+            btnHocPhi.BackColor = Color.FromArgb(23, 24, 29);
+            btnHocPhi.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHocPhi.ForeColor = Color.White;
+            btnHocPhi.Image = (Image)resources.GetObject("btnHocPhi.Image");
+            btnHocPhi.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHocPhi.Location = new Point(-21, -14);
+            btnHocPhi.Name = "btnHocPhi";
+            btnHocPhi.Padding = new Padding(25, 0, 0, 0);
+            btnHocPhi.Size = new Size(306, 94);
+            btnHocPhi.TabIndex = 4;
+            btnHocPhi.Text = "          Học phí";
+            btnHocPhi.TextAlign = ContentAlignment.MiddleLeft;
+            btnHocPhi.UseVisualStyleBackColor = false;
+            btnHocPhi.Click += btnHocPhi_Click;
             // 
             // panel7
             // 
-            panel7.Controls.Add(button6);
+            panel7.Controls.Add(btnDangXuat);
             panel7.Location = new Point(3, 378);
             panel7.Name = "panel7";
             panel7.Size = new Size(243, 69);
             panel7.TabIndex = 8;
             // 
-            // button6
+            // btnDangXuat
             // 
-            button6.BackColor = Color.FromArgb(23, 24, 29);
-            button6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-21, -14);
-            button6.Name = "button6";
-            button6.Padding = new Padding(25, 0, 0, 0);
-            button6.Size = new Size(306, 94);
-            button6.TabIndex = 4;
-            button6.Text = "          Đăng xuất";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = false;
+            btnDangXuat.BackColor = Color.FromArgb(23, 24, 29);
+            btnDangXuat.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDangXuat.ForeColor = Color.White;
+            btnDangXuat.Image = (Image)resources.GetObject("btnDangXuat.Image");
+            btnDangXuat.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDangXuat.Location = new Point(-21, -14);
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Padding = new Padding(25, 0, 0, 0);
+            btnDangXuat.Size = new Size(306, 94);
+            btnDangXuat.TabIndex = 4;
+            btnDangXuat.Text = "          Đăng xuất";
+            btnDangXuat.TextAlign = ContentAlignment.MiddleLeft;
+            btnDangXuat.UseVisualStyleBackColor = false;
+            btnDangXuat.Click += btnDangXuat_Click;
             // 
-            // panel8
+            // pnlContent
             // 
-            panel8.BackColor = Color.White;
-            panel8.Dock = DockStyle.Fill;
-            panel8.Location = new Point(250, 37);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(883, 702);
-            panel8.TabIndex = 2;
+            pnlContent.BackColor = Color.White;
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(250, 37);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(650, 463);
+            pnlContent.TabIndex = 2;
             // 
             // frmHocVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1133, 739);
-            Controls.Add(panel8);
+            ClientSize = new Size(900, 500);
+            Controls.Add(pnlContent);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -315,17 +321,17 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel2;
-        private Button button1;
+        private Button btnThongTin;
         private Panel panel3;
-        private Button button2;
+        private Button btnThoiKhoaBieu;
         private Panel panel4;
-        private Button button3;
+        private Button btnLichThi;
         private Panel panel5;
-        private Button button4;
+        private Button btnKetQuaHocTap;
         private Panel panel6;
-        private Button button5;
+        private Button btnHocPhi;
         private Panel panel7;
-        private Button button6;
-        private Panel panel8;
+        private Button btnDangXuat;
+        private Panel pnlContent;
     }
 }

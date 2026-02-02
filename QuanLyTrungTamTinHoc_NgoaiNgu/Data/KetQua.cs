@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class KetQua
+    public class KetQua
     {
         public int ID { get; set; }
         public int HocVienID { get; set; }

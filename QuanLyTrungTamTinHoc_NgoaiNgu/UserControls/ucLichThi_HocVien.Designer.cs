@@ -1,14 +1,14 @@
-﻿namespace QuanLyTrungTamTinHoc_NgoaiNgu
+﻿namespace QuanLyTrungTamTinHoc_NgoaiNgu.UserControls
 {
-    partial class login_Form
+    partial class ucLichThi_HocVien
     {
-        /// <summary>
-        ///  Required designer variable.
+        /// <summary> 
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
+        /// <summary> 
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -20,23 +20,22 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             SuspendLayout();
             // 
-            // login_Form
+            // ucLichThi_HocVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1307, 666);
-            Name = "login_Form";
-            Text = "Form1";
+            Name = "ucLichThi_HocVien";
+            Size = new Size(650, 463);
             ResumeLayout(false);
         }
 

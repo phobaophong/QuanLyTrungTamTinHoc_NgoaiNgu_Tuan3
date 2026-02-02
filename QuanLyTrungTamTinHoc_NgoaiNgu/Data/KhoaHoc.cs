@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class KhoaHoc
+    public class KhoaHoc
     {
         public int ID { get; set; }
         public string MaKH { get; set; } = null!;

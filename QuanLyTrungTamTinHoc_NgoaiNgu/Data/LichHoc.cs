@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class LichHoc
+    public class LichHoc
     {
         public int ID { get; set; }
         public int Thu { get; set; }

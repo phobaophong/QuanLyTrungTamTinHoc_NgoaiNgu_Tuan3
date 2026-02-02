@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class HocPhi
+    public class HocPhi
     {
         public int ID { get; set; }
         public string MaHP { get; set; } = null!;

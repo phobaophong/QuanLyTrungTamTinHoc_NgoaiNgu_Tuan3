@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
 {
-    internal class HocVien
+    public class HocVien
     {
         public int ID { get; set; }
         public string MaHV { get; set; } = null!;
@@ -14,6 +14,8 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
         public string? SoDienThoaiHV { get; set; }
         public string? DiaChi { get; set; }
         public string? EmailHV { get; set; }
+        public int? MaLopID { get; set; }
+        public virtual LopHoc? LopHoc { get; set; }
 
         public ICollection<KetQua> KetQuas { get; set; } = new List<KetQua>();
         public ICollection<HocPhi> HocPhis { get; set; } = new List<HocPhi>();
