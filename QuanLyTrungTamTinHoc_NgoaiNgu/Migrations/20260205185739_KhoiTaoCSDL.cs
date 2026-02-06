@@ -36,30 +36,12 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     HoTenGV = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SoDienThoaiGV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EmailGV = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ChuyenMon = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ChuyenMon = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HinhAnhGV = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_GiangVien", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HocVien",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MaHV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HoTenHV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    GioiTinh = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SoDienThoaiHV = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailHV = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HocVien", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -103,7 +85,8 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     HoTenNV = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SoDienThoaiNV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BoPhan = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ChucVu = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ChucVu = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HinhAnhNV = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -164,91 +147,26 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TaiKhoan",
+                name: "HocVien",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TenDN = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
-                    NhanVienID = table.Column<int>(type: "int", nullable: true),
-                    GiangVienID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TaiKhoan", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_TaiKhoan_GiangVien_GiangVienID",
-                        column: x => x.GiangVienID,
-                        principalTable: "GiangVien",
-                        principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_TaiKhoan_NhanVien_NhanVienID",
-                        column: x => x.NhanVienID,
-                        principalTable: "NhanVien",
-                        principalColumn: "ID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HocPhi",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MaHP = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SoTien = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
-                    NgayDongHocPhi = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    HocVienID = table.Column<int>(type: "int", nullable: false),
+                    MaHV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HoTenHV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    GioiTinh = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SoDienThoaiHV = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DiaChi = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EmailHV = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HinhAnhHV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LopHocID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HocPhi", x => x.ID);
+                    table.PrimaryKey("PK_HocVien", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_HocPhi_HocVien_HocVienID",
-                        column: x => x.HocVienID,
-                        principalTable: "HocVien",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_HocPhi_LopHoc_LopHocID",
-                        column: x => x.LopHocID,
-                        principalTable: "LopHoc",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "KetQua",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    HocVienID = table.Column<int>(type: "int", nullable: false),
-                    LopHocID = table.Column<int>(type: "int", nullable: false),
-                    LoaiDiemID = table.Column<int>(type: "int", nullable: false),
-                    LanThi = table.Column<int>(type: "int", nullable: false),
-                    DiemSo = table.Column<double>(type: "float", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_KetQua", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_KetQua_HocVien_HocVienID",
-                        column: x => x.HocVienID,
-                        principalTable: "HocVien",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_KetQua_LoaiDiem_LoaiDiemID",
-                        column: x => x.LoaiDiemID,
-                        principalTable: "LoaiDiem",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_KetQua_LopHoc_LopHocID",
+                        name: "FK_HocVien_LopHoc_LopHocID",
                         column: x => x.LopHocID,
                         principalTable: "LopHoc",
                         principalColumn: "ID",
@@ -261,7 +179,8 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Thu = table.Column<int>(type: "int", nullable: false),
+                    NgayHoc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BuoiSo = table.Column<int>(type: "int", nullable: false),
                     LopHocID = table.Column<int>(type: "int", nullable: false),
                     CaHocID = table.Column<int>(type: "int", nullable: false),
                     GiangVienID = table.Column<int>(type: "int", nullable: false),
@@ -294,6 +213,102 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                         principalTable: "PhongHoc",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HocPhi",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaHD = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SoTien = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
+                    NgayDongHocPhi = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    HocVienID = table.Column<int>(type: "int", nullable: false),
+                    LopHocID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HocPhi", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_HocPhi_HocVien_HocVienID",
+                        column: x => x.HocVienID,
+                        principalTable: "HocVien",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HocPhi_LopHoc_LopHocID",
+                        column: x => x.LopHocID,
+                        principalTable: "LopHoc",
+                        principalColumn: "ID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "KetQua",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HocVienID = table.Column<int>(type: "int", nullable: false),
+                    LoaiDiemID = table.Column<int>(type: "int", nullable: false),
+                    LanThi = table.Column<int>(type: "int", nullable: false),
+                    DiemSo = table.Column<double>(type: "float", nullable: false),
+                    LopHocID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_KetQua", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_KetQua_HocVien_HocVienID",
+                        column: x => x.HocVienID,
+                        principalTable: "HocVien",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_KetQua_LoaiDiem_LoaiDiemID",
+                        column: x => x.LoaiDiemID,
+                        principalTable: "LoaiDiem",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_KetQua_LopHoc_LopHocID",
+                        column: x => x.LopHocID,
+                        principalTable: "LopHoc",
+                        principalColumn: "ID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TaiKhoan",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenDN = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
+                    NhanVienID = table.Column<int>(type: "int", nullable: true),
+                    GiangVienID = table.Column<int>(type: "int", nullable: true),
+                    HocVienID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TaiKhoan", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_TaiKhoan_GiangVien_GiangVienID",
+                        column: x => x.GiangVienID,
+                        principalTable: "GiangVien",
+                        principalColumn: "ID");
+                    table.ForeignKey(
+                        name: "FK_TaiKhoan_HocVien_HocVienID",
+                        column: x => x.HocVienID,
+                        principalTable: "HocVien",
+                        principalColumn: "ID");
+                    table.ForeignKey(
+                        name: "FK_TaiKhoan_NhanVien_NhanVienID",
+                        column: x => x.NhanVienID,
+                        principalTable: "NhanVien",
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -354,6 +369,11 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 column: "LopHocID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_HocVien_LopHocID",
+                table: "HocVien",
+                column: "LopHocID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_KetQua_HocVienID",
                 table: "KetQua",
                 column: "HocVienID");
@@ -404,6 +424,11 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 column: "GiangVienID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TaiKhoan_HocVienID",
+                table: "TaiKhoan",
+                column: "HocVienID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TaiKhoan_NhanVienID",
                 table: "TaiKhoan",
                 column: "NhanVienID");
@@ -438,16 +463,10 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 name: "TaiKhoan_Quyen");
 
             migrationBuilder.DropTable(
-                name: "HocVien");
-
-            migrationBuilder.DropTable(
                 name: "LoaiDiem");
 
             migrationBuilder.DropTable(
                 name: "CaHoc");
-
-            migrationBuilder.DropTable(
-                name: "LopHoc");
 
             migrationBuilder.DropTable(
                 name: "PhongHoc");
@@ -459,13 +478,19 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 name: "TaiKhoan");
 
             migrationBuilder.DropTable(
-                name: "KhoaHoc");
-
-            migrationBuilder.DropTable(
                 name: "GiangVien");
 
             migrationBuilder.DropTable(
+                name: "HocVien");
+
+            migrationBuilder.DropTable(
                 name: "NhanVien");
+
+            migrationBuilder.DropTable(
+                name: "LopHoc");
+
+            migrationBuilder.DropTable(
+                name: "KhoaHoc");
         }
     }
 }

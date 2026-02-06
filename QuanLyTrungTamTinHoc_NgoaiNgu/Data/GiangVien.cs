@@ -12,6 +12,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
         public string? SoDienThoaiGV { get; set; }
         public string? EmailGV { get; set; }
         public string? ChuyenMon {  get; set; }
+        public string? HinhAnhGV { get; set; }
 
         public virtual ICollection<LichHoc> LichHocs { get; set; } = new List<LichHoc>();
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; } = new List<TaiKhoan>();

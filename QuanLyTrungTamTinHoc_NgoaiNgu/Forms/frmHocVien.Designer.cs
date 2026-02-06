@@ -67,7 +67,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(900, 37);
+            panel1.Size = new Size(1264, 37);
             panel1.TabIndex = 0;
             // 
             // nightControlBox1
@@ -84,7 +84,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(761, 0);
+            nightControlBox1.Location = new Point(1125, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -126,7 +126,7 @@
             flowLayoutPanel1.ForeColor = SystemColors.ControlText;
             flowLayoutPanel1.Location = new Point(0, 37);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(250, 463);
+            flowLayoutPanel1.Size = new Size(250, 591);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // panel2
@@ -282,17 +282,16 @@
             // pnlContent
             // 
             pnlContent.BackColor = Color.White;
-            pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(250, 37);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(650, 463);
+            pnlContent.Size = new Size(971, 562);
             pnlContent.TabIndex = 2;
             // 
             // frmHocVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 500);
+            ClientSize = new Size(1264, 628);
             Controls.Add(pnlContent);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);

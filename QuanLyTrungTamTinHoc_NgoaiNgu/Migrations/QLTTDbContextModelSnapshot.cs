@@ -59,6 +59,9 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Property<string>("EmailGV")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HinhAnhGV")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("HoTenGV")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -86,10 +89,10 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Property<int>("HocVienID")
                         .HasColumnType("int");
 
-                    b.Property<int>("LopHocID")
+                    b.Property<int?>("LopHocID")
                         .HasColumnType("int");
 
-                    b.Property<string>("MaHP")
+                    b.Property<string>("MaHD")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -128,19 +131,19 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Property<string>("GioiTinh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("HinhAnhHV")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("HoTenHV")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LopHocID")
+                    b.Property<int>("LopHocID")
                         .HasColumnType("int");
 
                     b.Property<string>("MaHV")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("MaLopID")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("NgaySinh")
                         .HasColumnType("datetime2");
@@ -175,7 +178,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Property<int>("LoaiDiemID")
                         .HasColumnType("int");
 
-                    b.Property<int>("LopHocID")
+                    b.Property<int?>("LopHocID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -224,6 +227,9 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<int>("BuoiSo")
+                        .HasColumnType("int");
+
                     b.Property<int>("CaHocID")
                         .HasColumnType("int");
 
@@ -233,10 +239,10 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Property<int>("LopHocID")
                         .HasColumnType("int");
 
-                    b.Property<int>("PhongHocID")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("NgayHoc")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("Thu")
+                    b.Property<int>("PhongHocID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -323,6 +329,9 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ChucVu")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HinhAnhNV")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HoTenNV")
@@ -480,22 +489,20 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", "LopHoc")
+                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", null)
                         .WithMany("HocPhis")
-                        .HasForeignKey("LopHocID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LopHocID");
 
                     b.Navigation("HocVien");
-
-                    b.Navigation("LopHoc");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.HocVien", b =>
                 {
                     b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", "LopHoc")
                         .WithMany()
-                        .HasForeignKey("LopHocID");
+                        .HasForeignKey("LopHocID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("LopHoc");
                 });
@@ -514,17 +521,13 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", "LopHoc")
+                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", null)
                         .WithMany("KetQuas")
-                        .HasForeignKey("LopHocID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LopHocID");
 
                     b.Navigation("HocVien");
 
                     b.Navigation("LoaiDiem");
-
-                    b.Navigation("LopHoc");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LichHoc", b =>

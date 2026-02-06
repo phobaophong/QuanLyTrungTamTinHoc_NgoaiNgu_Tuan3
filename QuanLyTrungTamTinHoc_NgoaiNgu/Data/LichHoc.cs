@@ -7,7 +7,8 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
     public class LichHoc
     {
         public int ID { get; set; }
-        public int Thu { get; set; }
+        public DateTime NgayHoc { get; set; }
+        public int BuoiSo { get; set; }
         public int LopHocID { get; set; }
         public int CaHocID { get; set; }
         public int GiangVienID { get; set; }
