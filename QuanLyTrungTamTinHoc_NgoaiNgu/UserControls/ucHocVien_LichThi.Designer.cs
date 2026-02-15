@@ -1,6 +1,6 @@
 ﻿namespace QuanLyTrungTamTinHoc_NgoaiNgu.UserControls
 {
-    partial class ucHocPhi_HocVien
+    partial class ucHocVien_LichThi
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             SuspendLayout();
             // 
-            // ucHocPhi_HocVien
+            // ucLichThi_HocVien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "ucHocPhi_HocVien";
+            Name = "ucLichThi_HocVien";
             Size = new Size(650, 463);
             ResumeLayout(false);
         }

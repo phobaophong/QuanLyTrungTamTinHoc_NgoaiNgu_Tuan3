@@ -12,7 +12,6 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
         public decimal HocPhi { get; set; }
         public int ThoiLuong { get; set; }
 
-        public ICollection<LopHoc> LopHoc { get; set; } = new List<LopHoc>();
-
+        public ICollection<LopHoc> LopHocs { get; set; } = new List<LopHoc>();
     }
 }

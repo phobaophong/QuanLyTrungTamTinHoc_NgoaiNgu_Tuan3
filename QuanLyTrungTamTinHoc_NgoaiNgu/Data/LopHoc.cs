@@ -18,6 +18,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
         public virtual ICollection<LichHoc> LichHocs { get; set; } = new List<LichHoc>();
         public virtual ICollection<KetQua> KetQuas { get; set; } = new List<KetQua>();
         public virtual ICollection<HocPhi> HocPhis { get; set; } = new List<HocPhi>();
+        public virtual ICollection<HocVien> HocViens { get; set; } = new List<HocVien>();
 
     }
 }

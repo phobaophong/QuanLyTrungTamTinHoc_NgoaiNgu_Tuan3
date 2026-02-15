@@ -1,6 +1,6 @@
 ﻿namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
 {
-    partial class frmHocVien
+    partial class frmStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHocVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             panel1 = new Panel();
-            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -47,6 +46,7 @@
             panel7 = new Panel();
             btnDangXuat = new Button();
             pnlContent = new Panel();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -67,31 +67,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1264, 37);
+            panel1.Size = new Size(1203, 37);
             panel1.TabIndex = 0;
-            // 
-            // nightControlBox1
-            // 
-            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            nightControlBox1.BackColor = Color.Transparent;
-            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
-            nightControlBox1.CloseHoverForeColor = Color.White;
-            nightControlBox1.DefaultLocation = true;
-            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMaximizeButton = true;
-            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMinimizeButton = true;
-            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1125, 0);
-            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MaximizeHoverForeColor = Color.White;
-            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MinimizeHoverForeColor = Color.White;
-            nightControlBox1.Name = "nightControlBox1";
-            nightControlBox1.Size = new Size(139, 31);
-            nightControlBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -126,7 +103,7 @@
             flowLayoutPanel1.ForeColor = SystemColors.ControlText;
             flowLayoutPanel1.Location = new Point(0, 37);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(250, 591);
+            flowLayoutPanel1.Size = new Size(250, 640);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // panel2
@@ -284,20 +261,44 @@
             pnlContent.BackColor = Color.White;
             pnlContent.Location = new Point(250, 37);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(971, 562);
+            pnlContent.Size = new Size(953, 640);
             pnlContent.TabIndex = 2;
             // 
-            // frmHocVien
+            // nightControlBox1
+            // 
+            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            nightControlBox1.BackColor = Color.Transparent;
+            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = Color.White;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new Point(1064, 0);
+            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = Color.White;
+            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new Size(139, 31);
+            nightControlBox1.TabIndex = 6;
+            // 
+            // frmStudent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 628);
+            ClientSize = new Size(1203, 677);
             Controls.Add(pnlContent);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmHocVien";
+            Name = "frmStudent";
             Text = "frmHocVien";
+            FormClosed += frmStudent_FormClosed;
             Load += frmHocVien_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -317,7 +318,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
-        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel2;
         private Button btnThongTin;
@@ -332,5 +332,6 @@
         private Panel panel7;
         private Button btnDangXuat;
         private Panel pnlContent;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }

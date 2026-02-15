@@ -11,23 +11,29 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
 {
-    public partial class frmHocVien : Form
+    public partial class frmStudent : Form
     {
-        public frmHocVien()
+        private int _hocVienId;
+        public frmStudent()
         {
             InitializeComponent();
         }
-        private LopHoc lopHocDangHoc;
+        //constructor
+        public frmStudent(int hocVienId)
+        {
+            InitializeComponent();
+            _hocVienId = hocVienId;
+        }
         private void frmHocVien_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnThongTin_Click(object sender, EventArgs e)
         {
             pnlContent.Controls.Clear();
 
-            UserControls.ucThongTin_HocVien uc = new UserControls.ucThongTin_HocVien();
+            UserControls.ucHocVien_ThongTinChiTiet uc = new UserControls.ucHocVien_ThongTinChiTiet();
 
             uc.Dock = DockStyle.Fill;
 
@@ -37,7 +43,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
         private void btnThoiKhoaBieu_Click(object sender, EventArgs e)
         {
             pnlContent.Controls.Clear();
-            UserControls.ucThoiKhoaBieu_HocVien uc = new UserControls.ucThoiKhoaBieu_HocVien();
+            UserControls.ucHocVien_ThoiKhoaBieu uc = new UserControls.ucHocVien_ThoiKhoaBieu();
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
@@ -45,7 +51,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
         private void btnLichThi_Click(object sender, EventArgs e)
         {
             pnlContent.Controls.Clear();
-            UserControls.ucLichThi_HocVien uc = new UserControls.ucLichThi_HocVien();
+            UserControls.ucHocVien_LichThi uc = new UserControls.ucHocVien_LichThi();
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
@@ -53,7 +59,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
         private void btnKetQuaHocTap_Click(object sender, EventArgs e)
         {
             pnlContent.Controls.Clear();
-            UserControls.ucKetQuaHocTap_HocVien uc = new UserControls.ucKetQuaHocTap_HocVien();
+            UserControls.ucHocVien_KetQuaHocTap uc = new UserControls.ucHocVien_KetQuaHocTap();
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
@@ -61,7 +67,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
         private void btnHocPhi_Click(object sender, EventArgs e)
         {
             pnlContent.Controls.Clear();
-            UserControls.ucHocPhi_HocVien uc = new UserControls.ucHocPhi_HocVien();
+            UserControls.ucHocVien_HocPhi uc = new UserControls.ucHocVien_HocPhi();
             uc.Dock = DockStyle.Fill;
             pnlContent.Controls.Add(uc);
         }
@@ -77,9 +83,22 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
 
             if (result == DialogResult.Yes)
             {
-                frmLogin frm = new frmLogin();
-                frm.Show();
+                this.Tag = "Logout";
                 this.Close();
+            }
+        }
+
+        private void frmStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (this.Tag?.ToString() == "Logout")
+            {    
+                this.Hide();
+                frmLogin frm = new frmLogin();
+                frm.ShowDialog();
+            }
+            else
+            {          
+                Application.Exit();
             }
         }
     }

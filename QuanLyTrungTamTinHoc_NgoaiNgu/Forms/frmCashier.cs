@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace QuanLyTrungTamTinHoc_NgoaiNgu.UserControls
+namespace QuanLyTrungTamTinHoc_NgoaiNgu.Forms
 {
-    public partial class ucKetQuaHocTap_HocVien : UserControl
+    public partial class frmCashier : Form
     {
-        public ucKetQuaHocTap_HocVien()
+        public frmCashier()
         {
             InitializeComponent();
         }

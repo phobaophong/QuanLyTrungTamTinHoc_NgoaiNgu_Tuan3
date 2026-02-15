@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.UserControls
 {
-    public partial class ucHocPhi_HocVien : UserControl
+    public partial class ucHocVien_KetQuaHocTap : UserControl
     {
-        public ucHocPhi_HocVien()
+        public ucHocVien_KetQuaHocTap()
         {
             InitializeComponent();
         }

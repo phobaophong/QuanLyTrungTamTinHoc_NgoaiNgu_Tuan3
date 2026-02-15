@@ -9,11 +9,12 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Data
         public int ID { get; set; }
         public string MaNV { get; set; } = null!;
         public string HoTenNV { get; set; } = null!;
-        public string? SoDienThoaiNV { get; set; }
+        public string? Sdt { get; set; }
         public string? BoPhan { get; set; }
         public string? ChucVu {  get; set; }
         public string? HinhAnhNV { get; set; }
 
-        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; } = new List<TaiKhoan>();
+        public int TaiKhoanID { get; set; }
+        public virtual TaiKhoan TaiKhoan { get; set; } = null!;
     }
 }

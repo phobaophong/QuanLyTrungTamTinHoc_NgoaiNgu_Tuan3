@@ -12,8 +12,8 @@ using QuanLyTrungTamTinHoc_NgoaiNgu.Data;
 namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 {
     [DbContext(typeof(QLTTDbContext))]
-    [Migration("20260205185739_KhoiTaoCSDL")]
-    partial class KhoiTaoCSDL
+    [Migration("20260212133956_KhoiTaóCDL")]
+    partial class KhoiTaóCDL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,12 +71,21 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     b.Property<string>("MaGV")
                         .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Sdt")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SoDienThoaiGV")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TaiKhoanID")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("MaGV")
+                        .IsUnique();
+
+                    b.HasIndex("TaiKhoanID")
+                        .IsUnique();
 
                     b.ToTable("GiangVien");
                 });
@@ -146,17 +155,26 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     b.Property<string>("MaHV")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("NgaySinh")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SoDienThoaiHV")
+                    b.Property<string>("Sdt")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaiKhoanID")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("LopHocID");
+
+                    b.HasIndex("MaHV")
+                        .IsUnique();
+
+                    b.HasIndex("TaiKhoanID")
+                        .IsUnique();
 
                     b.ToTable("HocVien");
                 });
@@ -208,7 +226,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     b.Property<string>("MaKH")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TenKH")
                         .IsRequired()
@@ -218,6 +236,9 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("MaKH")
+                        .IsUnique();
 
                     b.ToTable("KhoaHoc");
                 });
@@ -257,6 +278,12 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.HasIndex("LopHocID");
 
                     b.HasIndex("PhongHocID");
+
+                    b.HasIndex("NgayHoc", "CaHocID", "GiangVienID")
+                        .IsUnique();
+
+                    b.HasIndex("NgayHoc", "CaHocID", "PhongHocID")
+                        .IsUnique();
 
                     b.ToTable("LichHoc");
                 });
@@ -298,7 +325,7 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     b.Property<string>("MaLop")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("NgayBD")
                         .HasColumnType("datetime2");
@@ -316,6 +343,9 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("KhoaHocID");
+
+                    b.HasIndex("MaLop")
+                        .IsUnique();
 
                     b.ToTable("LopHoc");
                 });
@@ -343,12 +373,21 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     b.Property<string>("MaNV")
                         .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Sdt")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SoDienThoaiNV")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TaiKhoanID")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("MaNV")
+                        .IsUnique();
+
+                    b.HasIndex("TaiKhoanID")
+                        .IsUnique();
 
                     b.ToTable("NhanVien");
                 });
@@ -430,58 +469,39 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int?>("GiangVienID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("HocVienID")
-                        .HasColumnType("int");
-
                     b.Property<string>("MatKhau")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("NhanVienID")
+                    b.Property<int>("QuyenID")
                         .HasColumnType("int");
 
                     b.Property<string>("TenDN")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("TrangThai")
                         .HasColumnType("bit");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("GiangVienID");
+                    b.HasIndex("QuyenID");
 
-                    b.HasIndex("HocVienID");
-
-                    b.HasIndex("NhanVienID");
+                    b.HasIndex("TenDN")
+                        .IsUnique();
 
                     b.ToTable("TaiKhoan");
                 });
 
-            modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan_Quyen", b =>
+            modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.GiangVien", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", "TaiKhoan")
+                        .WithMany()
+                        .HasForeignKey("TaiKhoanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("QuyenID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TaiKhoanID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("QuyenID");
-
-                    b.HasIndex("TaiKhoanID");
-
-                    b.ToTable("TaiKhoan_Quyen");
+                    b.Navigation("TaiKhoan");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.HocPhi", b =>
@@ -502,12 +522,20 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.HocVien", b =>
                 {
                     b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", "LopHoc")
-                        .WithMany()
+                        .WithMany("HocViens")
                         .HasForeignKey("LopHocID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", "TaiKhoan")
+                        .WithMany()
+                        .HasForeignKey("TaiKhoanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("LopHoc");
+
+                    b.Navigation("TaiKhoan");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.KetQua", b =>
@@ -571,12 +599,23 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LopHoc", b =>
                 {
                     b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.KhoaHoc", "KhoaHoc")
-                        .WithMany("LopHoc")
+                        .WithMany("LopHocs")
                         .HasForeignKey("KhoaHocID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("KhoaHoc");
+                });
+
+            modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.NhanVien", b =>
+                {
+                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", "TaiKhoan")
+                        .WithMany()
+                        .HasForeignKey("TaiKhoanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TaiKhoan");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.PhienDangNhap", b =>
@@ -592,36 +631,13 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", b =>
                 {
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.GiangVien", null)
-                        .WithMany("TaiKhoans")
-                        .HasForeignKey("GiangVienID");
-
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.HocVien", null)
-                        .WithMany("TaiKhoans")
-                        .HasForeignKey("HocVienID");
-
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.NhanVien", null)
-                        .WithMany("TaiKhoans")
-                        .HasForeignKey("NhanVienID");
-                });
-
-            modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan_Quyen", b =>
-                {
                     b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.Quyen", "Quyen")
-                        .WithMany("TaiKhoan_Quyens")
+                        .WithMany("TaiKhoans")
                         .HasForeignKey("QuyenID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", "TaiKhoan")
-                        .WithMany("TaiKhoan_Quyens")
-                        .HasForeignKey("TaiKhoanID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Quyen");
-
-                    b.Navigation("TaiKhoan");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.CaHoc", b =>
@@ -632,8 +648,6 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.GiangVien", b =>
                 {
                     b.Navigation("LichHocs");
-
-                    b.Navigation("TaiKhoans");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.HocVien", b =>
@@ -641,13 +655,11 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                     b.Navigation("HocPhis");
 
                     b.Navigation("KetQuas");
-
-                    b.Navigation("TaiKhoans");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.KhoaHoc", b =>
                 {
-                    b.Navigation("LopHoc");
+                    b.Navigation("LopHocs");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.LoaiDiem", b =>
@@ -659,14 +671,11 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
                 {
                     b.Navigation("HocPhis");
 
+                    b.Navigation("HocViens");
+
                     b.Navigation("KetQuas");
 
                     b.Navigation("LichHocs");
-                });
-
-            modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.NhanVien", b =>
-                {
-                    b.Navigation("TaiKhoans");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.PhongHoc", b =>
@@ -676,14 +685,12 @@ namespace QuanLyTrungTamTinHoc_NgoaiNgu.Migrations
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.Quyen", b =>
                 {
-                    b.Navigation("TaiKhoan_Quyens");
+                    b.Navigation("TaiKhoans");
                 });
 
             modelBuilder.Entity("QuanLyTrungTamTinHoc_NgoaiNgu.Data.TaiKhoan", b =>
                 {
                     b.Navigation("PhienDangNhaps");
-
-                    b.Navigation("TaiKhoan_Quyens");
                 });
 #pragma warning restore 612, 618
         }
